@@ -289,12 +289,10 @@ body {
   color: var(--text-secondary);
 }
 
-.icon-steps svg{
-  position: relative;
-  width: 50px;
-  height: 50px;
-  stroke: var(--accent-gold); /* Ikon Emas */
-  margin-bottom: 20px;
+.icon-steps i {
+    font-size: 2.5rem; /* Ganti angka ini sesuai selera lo */
+    color: #ffffff; /* Bisa lo kasih warna juga sekalian */
+    display: our-colorblock; /* Biar gampang diatur posisinya */
 }
 
 .step-number {

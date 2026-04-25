@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "nama": "Web Development",
+    "deskripsi": "Bringing your creative ideas to life with high-performance websites and clean code.",
+    "iconClass": "fa-solid fa-code"
+  },
+  {
+    "id": 2,
+    "nama": "UI/UX Design",
+    "deskripsi": "Designing modern and user-friendly interfaces for any kind of digital platform.",
+    "iconClass": "fa-solid fa-pen-nib"
+  },
+  {
+    "id": 3,
+    "nama": "Landing Page",
+    "deskripsi": "Creating stunning one-page websites to showcase your profile, portfolio, or products.",
+    "iconClass": "fa-solid fa-file-lines"
+  },
+  {
+    "id": 4,
+    "nama": "Optimization",
+    "deskripsi": "Improving your website speed and fixing errors to ensure a seamless user experience.",
+    "iconClass": "fa-solid fa-gauge-high"
+  },
+  {
+    "id": 5,
+    "nama": "Smart Tools",
+    "deskripsi": "Developing custom calculators, trackers, or automated forms for your daily needs.",
+    "iconClass": "fa-solid fa-screwdriver-wrench"
+  },
+  {
+    "id": 6,
+    "nama": "Tech Consultation",
+    "deskripsi": "Sharing expert advice and technical guidance to help you navigate through your tech projects.",
+    "iconClass": "fa-solid fa-comments"
+  }
+]
+
+
