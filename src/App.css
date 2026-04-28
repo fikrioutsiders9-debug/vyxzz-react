@@ -161,7 +161,7 @@ body {
   text-align: center;
   /* KITA PAKE GAMBAR BACKGROUND BARU LO DI SINI */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(44, 44, 44, 0.6)), 
-              url('/pexels-nui-malama-169330637-29373698.jpg'); /* Pastikan file gambarnya lo rename/sesuain */
+              url('assets/pexels-nui-malama-169330637-29373698.jpg'); /* Pastikan file gambarnya lo rename/sesuain */
   image-rendering: optimizeQuality;
   background-size: cover;
   background-position: center;
@@ -419,6 +419,11 @@ body {
   color: var(--text-secondary);
 }
 
+.card-link {
+    text-decoration: none; /* Biar garis bawah hilang */
+    color: inherit;        /* Biar warna teks ngikutin warna asli card */
+    display: block;        /* Biar link-nya memenuhi area card */
+}
 
 .footer {
   background-color: #121212;

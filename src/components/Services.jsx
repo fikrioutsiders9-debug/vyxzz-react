@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { SERVICES_DATA } from '../constants/index'; // <-- Ini kita pensiunkan dulu
+import { Link } from 'react-router-dom';
 
 export default function Services() {
     // 1. MEMORI (useState): Siapin wadah kosong (array)
@@ -29,15 +29,17 @@ export default function Services() {
             <div id="card-services">
                 {/* 3. RENDER: Looping data dari state 'services' */}
                 {services.map((item) => (
-                    <div key={item.id} className="card card-reveal">
-                        <div className="icon-steps" style={{ marginBottom: '20px' }}>
-                            {/* Catatan: Icon nanti kita bahas, sementara pake placeholder */}
-                            <i className={item.iconClass}></i> 
+                    <Link to={`/service/${item.id}`} key={item.id} className="card-link">
+                        <div className="card card-reveal">
+                            <div className="icon-steps" style={{ marginBottom: '20px' }}>
+                                {/* Catatan: Icon nanti kita bahas, sementara pake placeholder */}
+                                <i className={item.iconClass}></i> 
+                            </div>
+                            <h3>{item.nama}</h3>
+                            <p>{item.deskripsi}</p>
                         </div>
-                        <h3>{item.nama}</h3>
-                        <p>{item.deskripsi}</p>
-                    </div>
-                ))}
+                    </Link>
+                    ))}
             </div>
         </section>
     );
