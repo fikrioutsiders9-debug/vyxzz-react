@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Navigation() {
   // 1. Ini Status (Boolean: true/false)
@@ -19,14 +20,14 @@ const closeSidebar = () => {
       {/* NAVBAR UTAMA */}
       <header className="navbar">
         <div className="logo">
-          <a href="#hero" className="menu-item">Vyxzz</a>
+          <HashLink smooth to="/#hero" className="menu-item">Vyxzz</HashLink>
         </div>
         <nav>
           <div className="linkNav">
-            <a href="#process" className="menu-item">Process</a>
-            <a href="#why-us" className="menu-item">Solutions</a>
-            <a href="#services" className="menu-item">Services</a>
-            <a href="#contact" className="menu-item">Contact</a>
+            <HashLink smooth to="/#process" className="menu-item">Process</HashLink>
+            <HashLink smooth to="/#why-us" className="menu-item">Solutions</HashLink>
+            <HashLink smooth to="/#services" className="menu-item">Services</HashLink>
+            <HashLink smooth to="/#contact" className="menu-item">Contact</HashLink>
           </div>
         </nav>
       </header>
@@ -48,10 +49,10 @@ const closeSidebar = () => {
       <div className={`sidebar ${sidebarOpen ? 'active' : ''}`} id="mySidebar">
         <nav>
           <div className="linkSidebar">
-            <a href="#process" className="menu-item" onClick={closeSidebar}>Process</a>
-            <a href="#why-us" className="menu-item" onClick={closeSidebar}>Solutions</a>
-            <a href="#services" className="menu-item" onClick={closeSidebar}>Services</a>
-            <a href="#contact" className="menu-item" onClick={closeSidebar}>Contact</a>
+            <HashLink smooth to="/#process" className="menu-item" onClick={closeSidebar}>Process</HashLink>
+            <HashLink smooth to="/#why-us" className="menu-item" onClick={closeSidebar}>Solutions</HashLink>
+            <HashLink smooth to="/#services" className="menu-item" onClick={closeSidebar}>Services</HashLink>
+            <HashLink smooth to="/#contact" className="menu-item" onClick={closeSidebar}>Contact</HashLink>
           </div>
         </nav>
       </div>

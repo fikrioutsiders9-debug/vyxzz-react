@@ -25,7 +25,7 @@ html {
   scroll-margin-top: 60px;
 }
 #why-us {
-  scroll-margin-top: -20px;
+  scroll-margin-top: 80px;
 }
 
 body {
@@ -239,17 +239,13 @@ body {
 
 .easySteps {
   height: 100%;
-  padding: 90px 0;
+  padding: 50px;
   background-color: var(--bg-light-main); /* Steps lebih terang dikit dari background utama */
 }
 
 .easySteps h1{
+  padding-bottom: 20px;
   text-align: center;
-  letter-spacing: 2px;
-  margin-top: 0px;
-  margin-bottom: 60px;
-  color: var(--text-primary);
-  font-weight: 700;
 }
 
 .easySteps h1 span {
@@ -340,12 +336,12 @@ body {
 
 .reason-item {
   display: flex;
-  margin-bottom: 10px;
+  
   padding: 15px;
   background-color:var(--bg-dark-main); /* Reason Item agak terang */
-  border-radius: 10px;
-  border: 1px solid transparent;
   transition: 0.3s;
+  border-left: 4px solid var(--accent-gold);
+
 }
 
 .reason-item:hover {
@@ -368,25 +364,21 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  padding: 80px 20px;
+  padding: 20px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .services {
-  padding: 0 30px;
-  margin-top: 0;
+  padding: 10px;
+  height: 100%;
   background-color: var(--bg-light-main);
   transition: all 0.3s ease;
 }
 
 .services h1{
-  padding-top: 80px; /* Ini yang bikin jarak aman di dalem */
-  padding-bottom: 0;
+  padding-top: 30px;
   text-align: center;
-  letter-spacing: 2px;
-  color: var(--text-primary);
-  font-weight: 700;
 }
 
 .services h1 span {
@@ -445,7 +437,7 @@ body {
 
 /* Update CSS Contact Section */
 .contact {
-  padding: 100px 20px;
+  padding: 50px 20px;
   background-color: var(--bg-dark-main); /* Abu-abu Tua sesuai urutan warna */
   text-align: center;
 }
@@ -497,6 +489,86 @@ body {
 .btn-whatsapp i {
   font-size: 1.4rem; /* Ukuran ikon WA */
 }
+
+.service-detail-page {
+  padding: 120px 20px;
+  min-height: 100vh;
+  background-color: var(--bg-dark-main);
+  color: var(--text-primary);
+}
+
+.detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.back-link:hover {
+  color: var(--accent-gold-hover);
+}
+
+.header-detail i {
+  font-size: 3.5rem;
+  color: var(--accent-gold);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.header-detail h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.long-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.detail-section h3 {
+  border-left: 4px solid var(--accent-gold);
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+}
+
+.tool-badge {
+  background: var(--bg-light-main);
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(230, 204, 178, 0.2);
+}
+
+.workflow-container {
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px;
+  border-radius: 20px;
+}
+
 /* --- MEDIA QUERIES (TETEP AMAN & UTUH DI SINI) --- */
 @media screen and (max-width: 900px) {
   .containerSteps {

@@ -3,38 +3,90 @@
     "id": 1,
     "nama": "Web Development",
     "deskripsi": "Bringing your creative ideas to life with high-performance websites and clean code.",
-    "iconClass": "fa-solid fa-code"
+    "iconClass": "fa-solid fa-code",
+    "longDesc": "I focus on building websites that aren't just visually stunning, but also boast lightning-fast performance and highly maintainable code. A slow website drives users away, which is why I ensure every line of code is optimized for efficiency. This service is perfect for those who need a custom-built web solution with specific features that off-the-shelf templates simply can't provide.",
+    "features": [
+      "Custom Architecture & Logic",
+      "Fully Responsive (Desktop, Tablet, Mobile)",
+      "SEO-Friendly Semantic Structure",
+      "Scalable API & Database Integration"
+    ],
+    "workflow": ["Discovery & Requirements", "System Architecture", "Development Phase", "Testing & Deployment"],
+    "tools": ["React.js", "Node.js", "Tailwind CSS", "MongoDB"]
   },
   {
     "id": 2,
     "nama": "UI/UX Design",
     "deskripsi": "Designing modern and user-friendly interfaces for any kind of digital platform.",
-    "iconClass": "fa-solid fa-pen-nib"
+    "iconClass": "fa-solid fa-pen-nib",
+    "longDesc": "Design isn't just about pretty colors; it's about how a user interacts with your product without friction. I help you create intuitive user journeys and modern visual aesthetics. My goal is to find the perfect balance between high-end aesthetics and practical functionality to keep your users engaged.",
+    "features": [
+      "User Research & Wireframing",
+      "High-Fidelity Visual Design",
+      "Interactive Prototyping",
+      "Scalable Design Systems"
+    ],
+    "workflow": ["User Flow Analysis", "Wireframing", "Visual Design", "Final Prototype"],
+    "tools": ["Figma", "Adobe XD", "Dribbble for Trends"]
   },
   {
     "id": 3,
     "nama": "Landing Page",
     "deskripsi": "Creating stunning one-page websites to showcase your profile, portfolio, or products.",
-    "iconClass": "fa-solid fa-file-lines"
+    "iconClass": "fa-solid fa-file-lines",
+    "longDesc": "I build conversion-focused Landing Pages designed to turn visitors into clients. Whether it's for personal branding, product launches, or event promotions, I emphasize clear copywriting, captivating visuals, and effective Call-to-Action (CTA) buttons that drive results.",
+    "features": [
+      "High-Conversion Layouts",
+      "Optimized Core Web Vitals",
+      "Modern Animations (Parallax/Framer Motion)",
+      "Instant WhatsApp/Email Integration"
+    ],
+    "workflow": ["Content Structure", "Section Design", "Animation Setup", "Live Hosting"],
+    "tools": ["Vite", "AOS Library", "Framer Motion", "Vercel"]
   },
   {
     "id": 4,
     "nama": "Optimization",
     "deskripsi": "Improving your website speed and fixing errors to ensure a seamless user experience.",
-    "iconClass": "fa-solid fa-gauge-high"
+    "iconClass": "fa-solid fa-gauge-high",
+    "longDesc": "Is your website lagging or plagued by bugs? I dive deep into the codebase to identify bottlenecks. I focus on reducing load times, resolving console errors, and optimizing assets like images and scripts to ensure your Google Lighthouse scores are consistently in the green.",
+    "features": [
+      "Core Web Vitals Enhancement",
+      "Advanced Image & Asset Compression",
+      "Comprehensive Bug Fixing",
+      "Security & Performance Patching"
+    ],
+    "workflow": ["Site Audit", "Performance Analysis", "Code Refactoring", "Final Speed Test"],
+    "tools": ["Lighthouse", "GTMetrix", "PageSpeed Insights", "Chrome DevTools"]
   },
   {
     "id": 5,
     "nama": "Smart Tools",
     "deskripsi": "Developing custom calculators, trackers, or automated forms for your daily needs.",
-    "iconClass": "fa-solid fa-screwdriver-wrench"
+    "iconClass": "fa-solid fa-screwdriver-wrench",
+    "longDesc": "I help you automate the boring stuff. From custom business calculators and habit trackers to automated registration forms—the goal is to simplify your life or your users' experience through intelligent, purpose-built digital tools.",
+    "features": [
+      "Custom Logic & Algorithms",
+      "Real-time Data Calculation",
+      "Local Storage & Data Persistence",
+      "Intuitive Input Interfaces"
+    ],
+    "workflow": ["Logic Formulation", "Backend/State Setup", "UI Integration", "User Feedback Loop"],
+    "tools": ["JavaScript ES6+", "Firebase", "Zustand / Redux"]
   },
   {
     "id": 6,
     "nama": "Tech Consultation",
     "deskripsi": "Sharing expert advice and technical guidance to help you navigate through your tech projects.",
-    "iconClass": "fa-solid fa-comments"
+    "iconClass": "fa-solid fa-comments",
+    "longDesc": "Not sure where to start your tech project? Or which stack best suits your business needs? I offer consulting sessions to discuss your technical requirements. I provide roadmaps, technology recommendations, and budget/time estimations to ensure you don't make costly mistakes.",
+    "features": [
+      "Architecture Decision Making",
+      "Tech Stack Recommendations",
+      "Code Review & Best Practices",
+      "Strategic Project Roadmap"
+    ],
+    "workflow": ["Briefing Session", "Technical Research", "Consultation Meeting", "Final Documentation"],
+    "tools": ["Google Meet", "Notion", "Miro (Whiteboarding)"]
   }
 ]
-
-
