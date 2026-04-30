@@ -26,7 +26,7 @@ export default function Services() {
     return (
         <section className="services" id="services">  
             <h1>Service <span>Offerings</span></h1>
-            <div id="card-services">
+            <div className="card-services">
                 {/* 3. RENDER: Looping data dari state 'services' */}
                 {services.map((item) => (
                     <Link to={`/service/${item.id}`} key={item.id} className="card-link">

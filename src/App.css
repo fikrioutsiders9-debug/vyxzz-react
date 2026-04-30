@@ -237,70 +237,111 @@ body {
   border-color: var(--text-primary);
 }
 
-.easySteps {
-  height: 100%;
-  padding: 50px;
-  background-color: var(--bg-light-main); /* Steps lebih terang dikit dari background utama */
-}
-
-.easySteps h1{
-  padding-bottom: 20px;
+.easySteps h1 {
   text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+  text-transform: capitalize;
 }
 
+/* Bagian "to Create a Website" */
 .easySteps h1 span {
+  display: block; /* Bikin kalimat lanjutannya turun ke bawah */
+  font-size: 1.2rem;
+  font-weight: 400;
   color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 5px; /* Kasih jarak antar huruf biar estetik */
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+/* Garis dekorasi kecil di bawah judul (opsional biar makin pro) */
+.easySteps h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-gold);
+  margin: 20px auto 0;
+  border-radius: 10px;
 }
 
 .containerSteps {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Gap lebih rapet */
   justify-content: center;
-  gap:20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.cardSteps {
-  position: relative;
-  width: 300px;
-  background-color: var(--bg-dark-main); /* Card Abu Tua */
   padding: 20px;
-  border-radius: 15px;
-  transition: 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  overflow: hidden; /* Biar kalau angkanya kegedean tetep kepotong rapi */
 }
 
-.cardSteps:hover {
-  transform: translateY(-5px);
-  border-color: rgba(230, 204, 178, 0.3);
+.cardStepsCompact {
+  position: relative;
+  width: 280px; /* Sedikit lebih ramping */
+  background: rgba(255, 255, 255, 0.04);
+  padding: 25px; /* Padding dikurangin biar gak tinggi ke bawah */
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.cardSteps h3 {
-  color: var(--accent-gold); /* Judul Langkah Emas */
-  font-size: 1.4rem;
-}
-
-.cardSteps p {
-  color: var(--text-secondary);
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
 }
 
 .icon-steps i {
-    font-size: 2.5rem; /* Ganti angka ini sesuai selera lo */
-    color: #ffffff; /* Bisa lo kasih warna juga sekalian */
-    display: our-colorblock; /* Biar gampang diatur posisinya */
+  font-size: 1.8rem; /* Icon dikecilin dikit */
+  color: var(--accent-gold);
 }
 
-.step-number {
+.step-count {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: rgba(230, 204, 178, 0.2); /* Angka tipis tapi elegan */
+}
+
+.cardStepsCompact h3 {
+  font-size: 1.2rem; /* Font size disesuaikan */
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.cardStepsCompact p {
+  font-size: 0.85rem; /* Deskripsi lebih compact */
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Hover Effect yang Minimalis */
+.cardStepsCompact:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--accent-gold);
+}
+
+.bottom-accent {
   position: absolute;
-  top: -10px;    
-  right: 15px;   
-  font-size: 9rem; 
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.02); /* Tipis banget biar gak ganggu teks di card gelap */
-  line-height: 1;
-  z-index: 0;    
-  user-select: none; 
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent-gold);
+  transition: 0.4s;
+}
+
+.cardStepsCompact:hover .bottom-accent {
+  width: 100%;
 }
 
 .why-us-section {
@@ -359,7 +400,7 @@ body {
   color: var(--text-secondary);
 }
 
-#card-services {
+.card-services {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -569,87 +610,121 @@ body {
   border-radius: 20px;
 }
 
-/* --- MEDIA QUERIES (TETEP AMAN & UTUH DI SINI) --- */
-@media screen and (max-width: 900px) {
-  .containerSteps {
-    flex-wrap: wrap;
-    }
-  }
-@media screen and (max-width: 771px) {
-  body, html {
-    width: 100%;
-  }
-  .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 10px 20px;
-  }
-  .logo h1 {
-    font-size: 28px;
-  }
-  .hamburger {
-    position: fixed;
-    top: 30px;
-    right: 20px;
-    z-index: 103;
-  }
-  .menu-item {
-    display: block;
-    font-size: 0.9rem;
-    margin: 10px 0;
-  }
-  .hero {
-    background-position: center;
-  }
-  .card {
-    width: 90%;
-    margin-bottom: 15px;
-  }
+/* ============================================================
+   MEDIA QUERIES (RESPONSIVE SYSTEM) BY GEMINI
+   ============================================================ */
+
+/* --- 1. TABLET & LAPTOP KECIL (Max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
   .hero-content h1 {
-    font-size: 35px;
+    font-size: 45px; /* Dikecilin dikit biar gak menuhi layar */
   }
-  .hero-content p {
-    font-size: 18px;
-  }
-  #card-services {
-    justify-content: center;
-    padding: 50px 20px;
-  }
-  #services {
-    scroll-margin-top: 80px;
-  }
+
   .split-layout {
     gap: 30px;
-    padding: 0 20px;
+    padding: 0 40px;
   }
-  .easySteps h1 {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
+
+  .containerSteps, .card-services {
+    gap: 15px;
   }
 }
 
-
-
-@media screen and (max-width: 525px) {
-  .sort-container {
-    justify-content: center;
-  }
-  #addService {
-    justify-content: center;
-    gap: 5px;
-    width: 100%;
-  }
-  #btnNewServices {
-    margin-top: 5px;
-  }
-}
-
-@media screen and (max-width: 450px) {
+/* --- 2. HP LANDSCAPE / TABLET PORTRAIT (Max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+  /* Navbar & Sidebar */
   .hamburger span {
-    display: block;
+    display: block; /* Hamburger muncul di sini */
+    position: relative;
+    top:-15px;
   }
   .linkNav {
-    display: none;
+    display: none; /* Navigasi atas ilang */
+  }
+
+  /* Hero Section */
+  .hero-content h1 {
+    font-size: 38px;
+    padding: 0 20px;
+  }
+  .hero-content p {
+    font-size: 16px;
+    padding: 0 30px;
+  }
+  .hero-cta {
+    flex-direction: column; /* Tombol jadi tumpuk vertikal */
+    align-items: center;
+    gap: 15px;
+  }
+  .btn-create, .btn-outline {
+    width: 80%; /* Tombol lebih lebar di HP */
+    text-align: center;
+  }
+
+  /* Why Us (Split Layout jadi Stack) */
+  .split-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+  .reason-item {
+    text-align: left; /* Teks dalem card tetep rata kiri biar rapi */
+  }
+
+  /* Judul Section */
+  .easySteps h1, .section-title, .contact-header h2 {
+    font-size: 2rem;
+  }
+}
+
+/* --- 3. HP PORTRAIT (Max-width: 480px) --- */
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 5px 20px;
+  }
+
+  .logo a {
+    font-size: 24px; /* Logo dikecilin biar gak nabrak hamburger */
+  }
+
+  /* Hero */
+  .hero-content h1 {
+    font-size: 30px;
+  }
+  
+  /* Cards (Services & Steps) */
+  .cardStepsCompact, .card {
+    width: 100%; /* Card jadi satu-satu ke bawah full width */
+    max-width: none;
+  }
+
+  .easySteps h1 span {
+    font-size: 0.9rem; /* Sub-judul langkah lebih kecil */
+    letter-spacing: 2px;
+  }
+
+  /* Why Us */
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  /* Detail Page (Halaman detail service) */
+  .header-detail h1 {
+    font-size: 2rem;
+  }
+  .header-detail i {
+    font-size: 2.5rem;
+  }
+  .detail-grid {
+    grid-template-columns: 1fr; /* Paksa satu kolom */
+  }
+  .workflow-container {
+    padding: 20px;
+  }
+
+  /* Contact */
+  .btn-whatsapp {
+    width: 100%;
+    font-size: 1rem;
+    padding: 15px 20px;
   }
 }
