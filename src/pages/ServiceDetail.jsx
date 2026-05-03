@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 export default function ServiceDetail() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
+  const [error, setError] = useState(false); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,16 +13,22 @@ export default function ServiceDetail() {
         const res = await fetch('/data/services.json');
         const data = await res.json();
         const found = data.find(s => s.id === parseInt(id));
-        setItem(found);
+        if (found) {
+          setItem(found);
+        } else {
+          setError(true);
+        }
       } catch (err) {
         console.error("Error:", err);
+        setError(true);
       }
     };
     fetchData();
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [id]);  //Tiap id di url berubah jalanin fungsi//
 
-  if (!item) return <div className="loading">Loading...</div>;
+  if (error) return <div style={{ textAlign:'center',padding:'50px'}}>Service not found!</div>
+  if (!item) return <div style={{ textAlign:'center',padding:'50px'}}>Loading...</div>;
 
   return (
     <div className="service-detail-page">

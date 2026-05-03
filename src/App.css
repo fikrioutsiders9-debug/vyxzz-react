@@ -377,7 +377,6 @@ body {
 
 .reason-item {
   display: flex;
-  
   padding: 15px;
   background-color:var(--bg-dark-main); /* Reason Item agak terang */
   transition: 0.3s;
