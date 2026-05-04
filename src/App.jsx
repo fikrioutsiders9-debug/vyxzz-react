@@ -4,8 +4,16 @@ import Navigation from './components/Nav'
 import Footer from './components/Footer'
 import Home from './pages/Home';
 import ProjectDetail from './pages/ServiceDetail'; // 1. Import halamannya
+import { useEffect } from 'react';
+import useServiceStore from './store/useServiceStore';
 
-function App() {
+export default function App() {
+  const fetchAllData = useServiceStore((state) => state.fetchAllData);
+
+  useEffect(() => { //untuk menjalankan function otomatis tiap web pertama kali dibuka
+    fetchAllData();
+  }, [fetchAllData]);
+
   return (
     <Router>
       <Navigation /> {/* Navbar di luar Routes biar nempel terus */}
@@ -21,4 +29,3 @@ function App() {
   );
 }
 
-export default App;

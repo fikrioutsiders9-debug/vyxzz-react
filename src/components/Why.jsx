@@ -1,23 +1,8 @@
 import { useState, useEffect } from 'react';
+import useServiceStore from '../store/useServiceStore';
 
 export default function Why() {
-  const [why, setWhy] = useState([]);
-
-  useEffect(() => {
-        const fetchWhy = async () => {
-            try {
-                // Kurir berangkat ke folder public buat ambil file JSON
-                const response = await fetch('/data/why.json');
-                const data = await response.json();
-                
-                // Simpan hasil setoran kurir ke memori
-                setWhy(data);
-            } catch (error) {
-                console.error("Gagal ambil data:", error);
-            }
-        };
-        fetchWhy();
-    }, []); // Kosong artinya cuma jalan 1x di awal
+  const why = useServiceStore((state) => state.why);
 
   return (
     <section id="why-us" className="why-us-section">

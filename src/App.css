@@ -531,7 +531,7 @@ body {
 }
 
 .service-detail-page {
-  padding: 120px 20px;
+  padding: 40px 20px;
   min-height: 100vh;
   background-color: var(--bg-dark-main);
   color: var(--text-primary);

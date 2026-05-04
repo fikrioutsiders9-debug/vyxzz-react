@@ -1,34 +1,32 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
+import useServiceStore from '../store/useServiceStore';
 
 export default function ServiceDetail() {
   const { id } = useParams();
-  const [item, setItem] = useState(null);
-  const [error, setError] = useState(false); 
+
+  const services = useServiceStore((state) => state.services); //ambil data services, loading, error
+  const isLoading = useServiceStore((state) => state.isLoading);
+  const error = useServiceStore((state) => state.error);
+
+  const item = services.find(s => s.id === parseInt(id));
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/data/services.json');
-        const data = await res.json();
-        const found = data.find(s => s.id === parseInt(id));
-        if (found) {
-          setItem(found);
-        } else {
-          setError(true);
-        }
-      } catch (err) {
-        console.error("Error:", err);
-        setError(true);
-      }
-    };
-    fetchData();
     window.scrollTo(0, 0);
-  }, [id]);  //Tiap id di url berubah jalanin fungsi//
+  }, [id]); // tiap id berubah dia scroll keatas
 
-  if (error) return <div style={{ textAlign:'center',padding:'50px'}}>Service not found!</div>
-  if (!item) return <div style={{ textAlign:'center',padding:'50px'}}>Loading...</div>;
+  // 1. Cek apakah masih loading (sedang fetch)
+  if (isLoading) {
+    return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>Loading...</div>;
+  }
+  // 2. Cek apakah ada error pas fetch
+  if (error) {
+    return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>Error {error}</div>;
+  }
+  // 3. JAGA-JAGA KALAU DATA TIDAK KETEMU
+  if (!item) {
+    return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>Data not found!</div>;
+  }
 
   return (
     <div className="service-detail-page">
@@ -46,7 +44,7 @@ export default function ServiceDetail() {
           <section className="detail-section">
             <h3>Features</h3>
             <ul className="feature-list">
-              {item.features.map((f, i) => <li key={i}>• {f}</li>)}
+              {item.features.map((f, i) => <li key={i}>• {f}</li>)} {/*f= parameter, i= index yg dijadiin key*/}
             </ul>
           </section>
 

@@ -8,7 +8,7 @@ export default function Hero() {
       <h2>Helping you turn creative ideas into professional digital reality</h2>
       <div className="hero-cta">
         <a href="#services"  className="btn-create">Create Your Website</a>
-        <a href="https://github.com/fikrioutsiders9-debug/my-vanilla-js-project" target="_blank" rel="noopener noreferrer" class="btn-outline">View Portfolio</a>
+        <a href="https://github.com/fikrioutsiders9-debug/my-vanilla-js-project" target="_blank" rel="noopener noreferrer" className="btn-outline">View Portfolio</a>
       </div>
     </div>
   </section>

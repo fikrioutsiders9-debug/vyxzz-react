@@ -1,28 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import useServiceStore from '../store/useServiceStore';
 
 export default function Services() {
-    // 1. MEMORI (useState): Siapin wadah kosong (array)
-    const [services, setServices] = useState([]);
-
-    // 2. DRIVER (useEffect): Ambil data otomatis pas web dibuka
-    useEffect(() => {
-        const fetchServices = async () => {
-            try {
-                // Kurir berangkat ke folder public buat ambil file JSON
-                const response = await fetch('/data/services.json');
-                const data = await response.json();
-                
-                // Simpan hasil setoran kurir ke memori
-                setServices(data);
-            } catch (error) {
-                console.error("Gagal ambil data:", error);
-            }
-        };
-
-        fetchServices();
-    }, []); // Kosong artinya cuma jalan 1x di awal
-
+    const services = useServiceStore((state) => state.services);
+    const isLoading = useServiceStore((state) => state.isLoading);
+    const error = useServiceStore((state) => state.error);
+    
     return (
         <section className="services" id="services">  
             <h1>Service <span>Offerings</span></h1>

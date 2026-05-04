@@ -7,7 +7,7 @@ export default function Contact() {
       <p>Let's talk about how we can bring your ideas to life. Click below to start a conversation.</p>
     </div>
     
-    <a href="https://wa.me/6281234567890?text=Hi Vyxzz! I am interested in your service." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" target="_blank">
+    <a href="https://wa.me/6281234567890?text=Hi Vyxzz! I am interested in your service." target="_blank" rel="noopener noreferrer" className="btn-whatsapp" target="_blank">
       <i className="fab fa-whatsapp"></i> Chat on WhatsApp
     </a>
   </div>
