@@ -4,7 +4,7 @@ export default function Hero() {
     <section className="hero" id="hero">
     <div className="overlay"></div>
     <div className="hero-content">
-      <h1>Building <span>Digital Experiences </span>with Vyxzz</h1>
+      <h1>Building scalable <br></br><span>Web solutions </span></h1>
       <h2>Helping you turn creative ideas into professional digital reality</h2>
       <div className="hero-cta">
         <a href="#services"  className="btn-create">Create Your Website</a>

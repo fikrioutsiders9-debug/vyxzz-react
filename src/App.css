@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Mulish', sans-serif;
   margin: 0;
   padding: 0; /* MARGIN DAN PADDING 0 BIAR GA ADA JARAK BAWAAN BROWSER */
   color: var(--text-primary);
@@ -54,10 +54,11 @@ body {
 }
 
 .logo a{
+
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 800;
-  letter-spacing: -4px; 
+  letter-spacing: 1px; 
   color: var(--accent-gold); /* Logo Emas Lembut */
   margin: 0;
 
@@ -204,11 +205,11 @@ body {
 .btn-create {
   background: var(--accent-gold); /* Tombol Emas */
   color: #1a1a1a; /* Teks item biar kontras */
-  padding: 16px 35px;
+  padding: 14px 15px;
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 0 5px 20px rgba(230, 204, 178, 0.3);
   transition: all 0.3s ease;
 }
@@ -223,10 +224,10 @@ body {
 .btn-outline {
   border: 2px solid rgba(255, 255, 255, 0.5);
   color: var(--text-primary);
-  padding: 14px 35px;
+  padding: 14px 15px;
   font-size: 1.1rem;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: 0.3s;
   font-weight: 500;
 }
@@ -236,7 +237,10 @@ body {
   color: #1a1a1a;
   border-color: var(--text-primary);
 }
-
+.process-section {
+  background-color: var(--bg-light-main);
+  padding: 20px;
+}
 .easySteps h1 {
   text-align: center;
   font-size: 2.5rem;
@@ -271,16 +275,18 @@ body {
 }
 
 .containerSteps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Gap lebih rapet */
+  display: grid;
+  margin: 0 auto;
   justify-content: center;
-  padding: 20px;
+  grid-template-columns: repeat(4, 230px);
+  gap: 10px; /* Gap lebih rapet */
+  padding: 10px;
 }
 
 .cardStepsCompact {
   position: relative;
-  width: 280px; /* Sedikit lebih ramping */
+  max-height: 80%;
+  max-width: 230px; /* Sedikit lebih ramping */
   background: rgba(255, 255, 255, 0.04);
   padding: 25px; /* Padding dikurangin biar gak tinggi ke bawah */
   border-radius: 18px;
@@ -364,7 +370,7 @@ body {
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .section-title span {
@@ -399,16 +405,6 @@ body {
   color: var(--text-secondary);
 }
 
-.card-services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .services {
   padding: 10px;
   height: 100%;
@@ -425,11 +421,19 @@ body {
   color:var(--accent-gold);
 
 }
-
+.card-services {
+  display: grid;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px 20px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 280px);
+}
 .card {
   background-color: #222222;
+  height: 70%;
   padding: 30px;
-  max-width: 300px;
+  max-width: 380px;
   width: 90%;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -512,7 +516,7 @@ body {
   background-color: var(--accent-gold); /* Warna Emas/Tan */
   color: #1a1a1a; /* Teks Hitam Pekat */
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: 700;
   font-size: 1.2rem;
   box-shadow: 0 5px 20px rgba(230, 204, 178, 0.3); /* Shadow Emas Lembut */
@@ -624,8 +628,19 @@ body {
     padding: 0 40px;
   }
 
-  .containerSteps, .card-services {
-    gap: 15px;
+  .containerSteps {
+    gap: 10px;
+    grid-template-columns: repeat(4, 180px);
+  }
+   .card-services {
+    gap: 40px;
+    grid-template-columns: repeat(3, 180px);
+   }
+  .cardStepsCompact, .card {
+    max-width: 190px;
+    height: 80%;
+    padding: 18px;
+    gap:0px;
   }
 }
 
@@ -673,6 +688,21 @@ body {
   .easySteps h1, .section-title, .contact-header h2 {
     font-size: 2rem;
   }
+  .containerSteps {
+    gap: 15px;
+    grid-template-columns: repeat(2, 230px);
+    
+  }
+   .card-services {
+    gap: 30px;
+    grid-template-columns: repeat(2, 220px);
+   }
+  .cardStepsCompact, .card {
+    max-width: 190px;
+    height: 80%;
+    padding: 18px;
+    gap:0px;
+  }
 }
 
 /* --- 3. HP PORTRAIT (Max-width: 480px) --- */
@@ -689,11 +719,19 @@ body {
   .hero-content h1 {
     font-size: 30px;
   }
-  
-  /* Cards (Services & Steps) */
+  .card-services {
+    gap: 5px;
+    grid-template-columns: repeat(1, 280px);
+  }
+  .containerSteps {
+    gap: 5px;
+    grid-template-columns: repeat(1, 280px);
+  }
   .cardStepsCompact, .card {
-    width: 100%; /* Card jadi satu-satu ke bawah full width */
-    max-width: none;
+    max-width: 300px;
+    width: 90%;
+    padding: 13px;
+    gap:0px;
   }
 
   .easySteps h1 span {
@@ -703,7 +741,8 @@ body {
 
   /* Why Us */
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    
   }
 
   /* Detail Page (Halaman detail service) */

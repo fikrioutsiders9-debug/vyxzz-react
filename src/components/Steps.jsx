@@ -25,9 +25,9 @@ export default function Steps() {
               {/* Garis aksen tipis di bawah */}
               <div className="bottom-accent"></div>
             </div>
-          ))};
+          ))}
         </div>
       </div>
     </section>
-    );
+    )
 }
