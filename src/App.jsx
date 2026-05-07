@@ -12,7 +12,7 @@ export default function App() {
 
   useEffect(() => { //untuk menjalankan function otomatis tiap web pertama kali dibuka
     fetchAllData();
-  }, [fetchAllData]);
+  }, [fetchAllData]);//tiap kali data berubah, jalanin lagi functionnya
 
   return (
     <Router>

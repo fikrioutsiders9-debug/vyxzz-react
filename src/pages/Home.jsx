@@ -13,7 +13,7 @@ export default function Home() {
     return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>Loading...</div>;
   }
   if (error) {
-    return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>Error {error}</div>;
+    return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>{error}</div>;
   }
 
   return (

@@ -13,15 +13,15 @@ const useServiceStore =
         fetchAllData: async () => {
             try {
                 set({ isLoading: true }); // Jangan lupa set loading tiap mulai fetch
-                const [resServices, resWhy, resSteps] = await Promise.all([
-                    supabase.from('services').select('*').order('id', { ascending: true }),
-                    supabase.from('why').select('*').order('id', { ascending: true }),
-                    supabase.from('stepsc').select('*').order('id', { ascending: true })
-                ]);
+                const [resServices, resWhy, resSteps] = await Promise.all([ // Ambil data sekaligus
+                    supabase.from('services').select('*').order('id', { ascending: true }),//.from('x'): Nama tabelnya
+                    supabase.from('why').select('*').order('id', { ascending: true }),//.select('*'): Ambil semua kolom
+                    supabase.from('steps').select('*').order('id', { ascending: true })
+                ]); //.order('id', { ascending: true }): Urutin dari ID terkecil biar tampilannya ga berantakan
 
-                // Supabase SDK itu return-nya objek: { data, error }
+                // Supabase SDK itu return-nya objek: { data, error, .... }
                 // Kita cek satu-satu apakah ada yang gagal
-                if (resServices.error) throw resServices.error;
+                if (resServices.error) throw resServices.error; // Lempar ke catch klo ada error
                 if (resWhy.error) throw resWhy.error;
                 if (resSteps.error) throw resSteps.error;
 
@@ -35,7 +35,7 @@ const useServiceStore =
 
             } catch (err) {
                 console.error("Gagal ambil data:", err);
-                set({error: err.message, isLoading: false})
+                set({error: err.message, isLoading: false}) // ditangkep disini
             }
         },
     }));
