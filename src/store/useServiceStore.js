@@ -1,4 +1,5 @@
 import {create} from 'zustand';
+import {supabase} from '../lib/supabase';
 
 const useServiceStore =
     create((set) => ({
@@ -11,21 +12,24 @@ const useServiceStore =
 
         fetchAllData: async () => {
             try {
+                set({ isLoading: true }); // Jangan lupa set loading tiap mulai fetch
                 const [resServices, resWhy, resSteps] = await Promise.all([
-                    fetch ('/data/services.json'),
-                    fetch ('/data/why.json'),
-                    fetch ('/data/steps.json')
+                    supabase.from('services').select('*').order('id', { ascending: true }),
+                    supabase.from('why').select('*').order('id', { ascending: true }),
+                    supabase.from('stepsc').select('*').order('id', { ascending: true })
                 ]);
 
-                const services = await resServices.json();
-                const why = await resWhy.json();
-                const steps = await resSteps.json();
-               
+                // Supabase SDK itu return-nya objek: { data, error }
+                // Kita cek satu-satu apakah ada yang gagal
+                if (resServices.error) throw resServices.error;
+                if (resWhy.error) throw resWhy.error;
+                if (resSteps.error) throw resSteps.error;
 
+                // Masukin data ke state (datanya ada di property .data)
                 set({
-                    services,
-                    why,
-                    steps,
+                    services: resServices.data,
+                    why: resWhy.data,
+                    steps: resSteps.data,
                     isLoading: false,
                 });
 
