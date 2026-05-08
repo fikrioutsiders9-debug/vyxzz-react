@@ -751,11 +751,16 @@ body {
   .hero-content h1 {
     font-size: 30px;
   }
+  .services h1 {
+    font-size: 1.5rem;
+  }
   .card-services {
+    padding: 0;
     gap: 5px;
     grid-template-columns: repeat(1, 1fr);
   }
   .containerSteps {
+    padding: 0;
     gap: 7px;
     grid-template-columns: repeat(1, 1fr);
   }
@@ -764,16 +769,30 @@ body {
     padding: 15px;
     gap:5px;
   }
-
+  .easySteps h1 {
+    font-size: 1.6rem;
+  }
   .easySteps h1 span {
     font-size: 0.9rem; /* Sub-judul langkah lebih kecil */
     letter-spacing: 2px;
   }
 
-  /* Why Us */
+  /* Why*/
+  .split-layout{
+    padding: 10px;
+  }
   .section-title {
     font-size: 1.5rem;
-    
+  }
+ 
+  .left-content, 
+  .right-content {
+    text-align: left;
+    flex: none;      /* Matiin fungsi bagi-bagi space flex-nya */
+    width: 100%;     /* Paksa selebar layar HP */
+    min-width: 0;    /* Hancurkan batasan 200px biar nggak mentok */
+    padding: 0;      /* Bersihin padding biar beneran center */
+    margin: 0 auto;
   }
 
   /* Detail Page (Halaman detail service) */
@@ -791,6 +810,11 @@ body {
   }
 
   /* Contact */
+ 
+  .contact-header h2 {
+    font-size: 1.6rem;
+  }
+ 
   .btn-whatsapp {
     width: 80%;
     font-size: 1rem;

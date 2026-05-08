@@ -6,7 +6,7 @@ export default function Why() {
 
   return (
     <section id="why-us" className="why-us-section">
-      <div className="container split-layout">
+      <div className="split-layout">
         <div className="left-content">
           <h2 className="section-title">Why do you really <br></br><span>need a website?</span></h2>
           <p className="section-subtitle">In a digital-first world, your website is your strongest asset to tell your story and reach the right people.</p>
