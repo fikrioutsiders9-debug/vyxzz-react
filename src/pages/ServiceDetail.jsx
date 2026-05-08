@@ -16,12 +16,25 @@ export default function ServiceDetail() {
   }, [id]); // tiap id berubah dia scroll keatas
 
   // 1. Cek apakah masih loading (sedang fetch)
-  if (isLoading) {
-    return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>Loading...</div>;
+  if (isLoading && services.length === 0) {
+    return (
+      <div style={{ padding: '50px', minHeight: '100vh', color: 'white' }}>
+        <div className="skeleton" style={{ width: '200px', height: '40px', marginBottom: '20px' }}></div>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+            gap: '20px' 
+          }}>
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="skeleton" style={{ height: '300px', width: '100%' }}></div>
+          ))}
+          </div>
+      </div>
+    );
   }
   // 2. Cek apakah ada error pas fetch
   if (error) {
-    return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>Error {error}</div>;
+    return <div style={{padding:'50px',minHeight:'100vh',justifyContent:'center',textAlign:'center'}}>{error}</div>;
   }
   // 3. JAGA-JAGA KALAU DATA TIDAK KETEMU
   if (!item) {

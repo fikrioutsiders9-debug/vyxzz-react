@@ -1,8 +1,9 @@
 import {create} from 'zustand';
+import {persist} from 'zustand/middleware';
 import {supabase} from '../lib/supabase';
 
-const useServiceStore =
-    create((set) => ({
+const useServiceStore = create(
+    persist((set) => ({ //bungkus pertama presist, fungsinya nyimpen setiap perubahan ke localStorage dan nampilin memori itu sblm ambil data/useEffect
         services: [], //tempat nyimpen data
         why: [],
         steps: [],
@@ -38,6 +39,9 @@ const useServiceStore =
                 set({error: err.message, isLoading: false}) // ditangkep disini
             }
         },
-    }));
+    }),
+    {name: 'landing-page-storage',} // disimpan  disini
+    )
+);
 
 export default useServiceStore;
