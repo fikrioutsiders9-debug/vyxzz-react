@@ -4,6 +4,7 @@ import Why from '../components/Why'
 import Services from '../components/Services'
 import Contact from '../components/Contact'
 import useServiceStore from '../store/useServiceStore'
+import Seo from '../components/Seo'
 
 export default function Home() {
   const services = useServiceStore((state) => state.services);
@@ -32,13 +33,19 @@ export default function Home() {
   }
 
   return (
-   <main>
-      <Hero />
-      <Steps />
-      <Why />
-      <Services />
-      <Contact />
-    </main>
+    <>
+      <Seo 
+        title="Freelance Web Developer" 
+        description="Scalable Web Solutions."
+      />
+      <main>
+        <Hero />
+        <Steps />
+        <Why />
+        <Services />
+        <Contact />
+      </main>
+    </>
   )
 }
 
