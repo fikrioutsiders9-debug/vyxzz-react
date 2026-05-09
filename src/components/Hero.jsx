@@ -1,3 +1,4 @@
+import { HashLink } from 'react-router-hash-link';
 
 export default function Hero() {
   return (
@@ -7,7 +8,7 @@ export default function Hero() {
       <h1>Building scalable <br></br><span>Web solutions </span></h1>
       <h2>Helping you turn creative ideas into professional digital reality</h2>
       <div className="hero-cta">
-        <a href="#contact"  className="btn-create">Create Your Website</a>
+        <HashLink smooth to="#contact" className="btn-create">Create Your Website</HashLink>
         <a href="https://github.com/fikrioutsiders9-debug/my-vanilla-js-project" target="_blank" rel="noopener noreferrer" className="btn-outline">View Portfolio</a>
       </div>
     </div>
