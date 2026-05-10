@@ -6,17 +6,17 @@ import { HashLink } from 'react-router-hash-link';
 import Skeleton from '../components/Skeleton';
 
 export default function ServiceDetail() {
-  const { id } = useParams();
+  const { slug } = useParams();
 
   const services = useServiceStore((state) => state.services); //ambil data services, loading, error
   const isLoading = useServiceStore((state) => state.isLoading);
   const error = useServiceStore((state) => state.error);
 
-  const item = services.find(s => s.id === parseInt(id));
+  const item = services.find(s => s.slug === slug);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]); // tiap id berubah dia scroll keatas
+  }, [slug]); // tiap id berubah dia scroll keatas
 
   // 1. Cek apakah masih loading (sedang fetch)
   if (isLoading && services.length === 0) {
@@ -38,13 +38,11 @@ export default function ServiceDetail() {
         description={item.deskripsi} 
       />
       <div className="service-detail-page">
+        <HashLink to="/#services" className="back-link">← BACK</HashLink>
         <div className="detail-container">
-          {/* Tombol Back Singkat & Clean */}
-          <HashLink to="/#services" className="back-link">← BACK</HashLink>
-
           <header className="header-detail" style={{ marginTop: '20px' }}>
             <i className={item.iconClass}></i>
-            <h1>{item.nama}</h1>
+            <h2>{item.nama}</h2>
             <p className="long-desc">{item.longDesc}</p>
           </header>
 

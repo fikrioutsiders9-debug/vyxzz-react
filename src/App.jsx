@@ -21,7 +21,7 @@ export default function App() {
       <Routes>
         {/* URL utama (landing page) manggil komponen Home */}
         <Route path="/" element={<Home />} />
-        <Route path="/service/:id" element={<ProjectDetail />} />
+        <Route path="/service/:slug" element={<ProjectDetail />} />
       </Routes>
 
       <Footer /> {/* Footer juga nempel terus */}

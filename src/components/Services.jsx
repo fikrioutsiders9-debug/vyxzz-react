@@ -13,7 +13,7 @@ export default function Services() {
             <div className="card-services">
                 {/* 3. RENDER: Looping data dari state 'services' */}
                 {services.map((item) => (
-                    <Link to={`/service/${item.id}`} key={item.id} className="card-link">
+                    <Link to={`/service/${item.slug}`} key={item.id} className="card-link">
                         <div className="card">
                             <div className="icon-steps" style={{ marginBottom: '20px' }}>
                                 {/* Catatan: Icon nanti kita bahas, sementara pake placeholder */}

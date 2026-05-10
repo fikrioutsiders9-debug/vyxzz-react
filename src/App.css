@@ -545,11 +545,13 @@ body {
 }
 
 .detail-container {
-  max-width: 900px;
+  padding: 10px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .back-link {
+  padding: 10px;
   color: var(--accent-gold);
   text-decoration: none;
   font-size: 0.9rem;
