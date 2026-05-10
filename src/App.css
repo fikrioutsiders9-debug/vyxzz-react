@@ -149,7 +149,7 @@ body {
 }
 
 .hero {
-  height: 95vh;
+  min-height: 91dvh;
   margin: 0;
   padding: 0;
   display: flex;
