@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="socials">
         {/* LinkedIn */}
         <a 
-          href="https://www.linkedin.com/in/fikri-alfaritsi-516764407/" 
+          href="https://www.linkedin.com/in/fikri-alfaritsi-6aa00240b/" 
           target="_blank" 
           rel="noopener noreferrer"
           aria-label="LinkedIn"
