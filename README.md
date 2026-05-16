@@ -30,7 +30,7 @@ We don't just write code; we optimize for extreme speed and global SEO positioni
 ---
 
 ## 📸 Production Preview
-👉 **[Live Demo Deployment](https://vyxzz-react-f91226n6f-fikris-projects-b39e7aee.vercel.app/)**
+👉 **[Live Demo Deployment](https://vyxzz-react.vercel.app/)**
 
 ---
 
